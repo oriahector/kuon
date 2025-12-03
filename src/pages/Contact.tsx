@@ -11,7 +11,6 @@ function Contact(): ReactElement {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
-    // Aquí iría la lógica para enviar el formulario
     console.log('Formulario enviado:', formData)
     alert('¡Gracias por contactarnos! Te responderemos pronto.')
     setFormData({ name: '', email: '', message: '' })
@@ -27,26 +26,30 @@ function Contact(): ReactElement {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50">
+    <div className="min-h-screen bg-[#faf9f7]">
       <Header />
       
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-6 py-32">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
-              Contacta con Nosotros
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-widest text-slate-500/70 mb-4 font-light">
+              Contacto
+            </p>
+            <h1 className="text-4xl md:text-5xl font-light text-slate-700 mb-6 font-serif">
+              Hablemos de tu historia eterna
             </h1>
-            <p className="text-xl text-gray-600">
-              ¿Tienes alguna pregunta? Estamos aquí para ayudarte
+            <p className="text-slate-600/80 font-light leading-relaxed">
+              ¿Tienes alguna pregunta? Estamos aquí para ayudarte a crear 
+              la web perfecta para tu día especial.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="border-t border-slate-300/30 pt-12">
+            <form onSubmit={handleSubmit} className="space-y-8">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
+                  className="block text-xs uppercase tracking-wider text-slate-500/70 mb-3 font-light"
                 >
                   Nombre
                 </label>
@@ -57,7 +60,7 @@ function Contact(): ReactElement {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-0 py-3 bg-transparent border-b border-slate-300/40 focus:border-slate-400 outline-none transition-colors text-slate-700 font-light"
                   placeholder="Tu nombre"
                 />
               </div>
@@ -65,7 +68,7 @@ function Contact(): ReactElement {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
+                  className="block text-xs uppercase tracking-wider text-slate-500/70 mb-3 font-light"
                 >
                   Email
                 </label>
@@ -76,7 +79,7 @@ function Contact(): ReactElement {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-0 py-3 bg-transparent border-b border-slate-300/40 focus:border-slate-400 outline-none transition-colors text-slate-700 font-light"
                   placeholder="tu@email.com"
                 />
               </div>
@@ -84,7 +87,7 @@ function Contact(): ReactElement {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
+                  className="block text-xs uppercase tracking-wider text-slate-500/70 mb-3 font-light"
                 >
                   Mensaje
                 </label>
@@ -95,25 +98,27 @@ function Contact(): ReactElement {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition-all resize-none"
-                  placeholder="Cuéntanos qué necesitas..."
+                  className="w-full px-0 py-3 bg-transparent border-b border-slate-300/40 focus:border-slate-400 outline-none transition-colors resize-none text-slate-700 font-light"
+                  placeholder="Cuéntanos sobre tu boda..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-rose-600 hover:bg-rose-700 text-white font-semibold py-4 px-8 rounded-lg transition-all transform hover:scale-105"
+                className="mt-8 px-8 py-3 text-sm uppercase tracking-wider text-slate-700 border border-slate-300/50 hover:border-slate-400 transition-all font-light bg-white/50"
               >
-                Enviar Mensaje
+                Enviar mensaje
               </button>
             </form>
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">O escríbenos directamente a:</p>
+          <div className="mt-16 text-center border-t border-slate-300/30 pt-12">
+            <p className="text-slate-600/70 mb-4 font-light text-sm">
+              O escríbenos directamente a:
+            </p>
             <a
               href="mailto:info@kuon.com"
-              className="text-rose-600 hover:text-rose-700 font-semibold text-lg"
+              className="text-slate-700 hover:text-slate-600 font-light transition-colors"
             >
               info@kuon.com
             </a>
@@ -125,4 +130,3 @@ function Contact(): ReactElement {
 }
 
 export default Contact
-
